@@ -1,0 +1,83 @@
+****************************************************************************
+*		S3MOD	- a S3M and MOD trackered music player             *
+****************************************************************************
+
+/***************************************************************************
+ *   S3m/Mod player by Daniel Marks	GUS support by David Jeske 
+ *
+ * (C) 1994,1995 By Daniel Marks and David Jeske        
+ *
+ * While we retain the copyright to this code, this source code is FREE.
+ * You may use it in any way you wish, in any product you wish. You may 
+ * NOT steal the copyright for this code from us.                
+ *
+ * We respectfully ask that you email one of us, if possible, if you        
+ * produce something significant with this code, or if you have any bug 
+ * fixes to contribute.  We also request that you give credit where      
+ * credit is due if you include part of this code in a program of your own.
+ *                                                 
+ * See the associated README file for Thanks       
+ ***************************************************************************
+ *
+ */
+
+************** CHANGES *****************
+CHANGES for v1.08 to v1.09, October 21, 1995 (DJ)
+
+1. Fixed a GUS bug with note playing after it should be off
+2. Integrated SGI patches from 
+3. Multiplatform code layout improved and makefile restructured
+   (Brandon Long - blong@uiuc.edu)
+4. 
+
+************** CHANGES *****************
+CHANGES for v1.05 to v1.08, March 6, 1995 (DJ)
+
+1. Made the "GUS" sections conditionally compiled in
+2. Found a incorrectly declared variables (MAX_TRACKS->MAX_SAMPLES)
+   which was causing problems for the GUS.
+3. Integrated Ricky Beam's SUN and DEC patches. I have been
+   able to test and use the SUN support, the DEC I have not, 
+   your mileage may vary.
+
+CHANGES for v1.04 to v1.05, May 5, 1994 (DJ)
+
+1. Organized the code. (DJ)
+2. beattrack was changed to be able to drive both period and pitch
+   driven sound drivers. It was also taken out of updatetracks();
+   and moved to the "play_mod_xx" level. 
+3. GUS native support added. (DJ)
+4. Added new command line argument parsing code. (DM)
+5. Added NTSC/PAL speed adjustment.
+
+CHANGES for v1.02 to v1.04, May 5, 1994
+
+1. fixed bug in repeat length fix for mods that have 
+   repeat length of sample > sample length
+2. Use correct blocksize for card now, so Gravis Ultrasound
+   works correctly.
+3. Added loud/normal volume tables
+4. Consolidated beattrack_s3m and beattrack so that the
+   code was smaller, and made more sense.
+5. Got rid of pitchtable and now I use division to calculate
+   pitch rates for mods.
+6. Added quiet mode so that nothing is printed
+7. Added non-looping variable
+
+CHANGES from v1.00 to v1.02
+
+1. fixed for instrument size in s3m's > 24000 bytes
+2. fixed definition of s3m end of repeat loop
+3. hopefully fixed gravis ultrasound support
+4. added endian awareness
+5. added more effects to get_track_s3m()
+6. fixed fast sample rate (thank you, stevenl@ccnet.ccnet.com)
+
+CHANGES for v1.05 to v1.08, March 6, 1995 (DJ)
+
+1. Made the "GUS" sections conditionally compiled in
+2. Found a incorrectly declared variables (MAX_TRACKS->MAX_SAMPLES)
+   which was causing problems for the GUS.
+3. Integrated Ricky Beam's SUN and DEC patches. I have been
+   able to test and use the SUN support, the DEC I have not, 
+   your mileage may vary.

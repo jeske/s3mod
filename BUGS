@@ -1,0 +1,7 @@
+BUGS:
+ 
+1. Faint clicking from voices when they shut off.  I think this is
+   some logical bug as other players don't seem to have this problem,
+   any solutions appreciated.
+2. Some effects are not implemented 100% correctly for GUS
+
