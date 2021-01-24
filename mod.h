@@ -30,15 +30,15 @@
 
 #ifdef NEAR_FAR_PTR
 typedef uint8 near *sample8_near;
-typedef uint16 near *sample16_near;
+typedef int16 near *sample16_near;
 typedef uint8 far *sample8_far;
-typedef uint16 far *sample16_far;
+typedef int16 far *sample16_far;
 typedef uint8 far *pattern_ptr;
 #else
 typedef uint8 *sample8_near;
-typedef uint16 *sample16_near;
+typedef int16 *sample16_near;
 typedef uint8 *sample8_far;
-typedef uint16 *sample16_far;
+typedef int16 *sample16_far;
 typedef uint8 *pattern_ptr;
 #endif
 
@@ -202,8 +202,8 @@ void startplaying(int loud);
 void updatetracks(void);
 void mixtrack_8_stereo(track_info *track, uint8 *buffer, uint16 buflen, uint32 channel);
 void mixtrack_8_mono(track_info *track, uint8 *buffer, uint16 buflen);
-void mixtrack_16_stereo(track_info *track, uint16 *buffer, uint16 buflen, uint32 channel);
-void mixtrack_16_mono(track_info *track, uint16 *buffer, uint16 buflen);
+void mixtrack_16_stereo(track_info *track, int16 *buffer, uint16 buflen, uint32 channel);
+void mixtrack_16_mono(track_info *track, int16 *buffer, uint16 buflen);
 
 extern uint8                   sintable[];
 extern song_data               mod;
