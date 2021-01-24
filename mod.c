@@ -439,11 +439,11 @@ void startplaying(int loud)
   {
     if (mod.tracks < 5)
      for (j=0;j<16640;j++)
-           vol.vol_table16[j] = (vol_adj[(j >> 8)] * ((j-0x80) & 0xFF)); 
+           vol.vol_table16[j] = (vol_adj[(j >> 8)] * (int)((char)j) );
      else
      for (j=0;j<16640;j++)
      {
-           vol.vol_table16[j] = (vol_adj[(j >> 8)] * ((j-0x80) & 0xFF)) >> 1;
+           vol.vol_table16[j] = (vol_adj[(j >> 8)] * (int)((char)j) ) >> 1;
        }
   } else
   {
