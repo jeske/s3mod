@@ -44,7 +44,7 @@
 union
 {
   uint8                   rot_buf[ROT_BUF_SIZE];
-  uint16                  rot_buf16[ROT_BUF_SIZE];
+  int16                   rot_buf16[ROT_BUF_SIZE];
 } buf;
 
 void updatetracks(void)
@@ -128,9 +128,9 @@ void play_mod(int loud)
     if (bit16)
     {
       if (stereo)
-         for (d=&buf.rot_buf16[bpm_samples << 1];d > buf.rot_buf16;*(--d) = 0x8000);
+         for (d=&buf.rot_buf16[bpm_samples << 1];d > buf.rot_buf16;*(--d) = 0x0000);
          else
-         for (d=&buf.rot_buf16[bpm_samples];d > buf.rot_buf16;*(--d) = 0x8000);
+         for (d=&buf.rot_buf16[bpm_samples];d > buf.rot_buf16;*(--d) = 0x0000);
     } else
     {
       if (stereo)
